@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   def home
-    # foo = Foobar.new "baz"
-    # @baz = foo.bar :cat, sat: :dat, dat: :sat
+    foo = Foobar.new "baz"
+    @baz = foo.bar :cat, sat: :dat, dat: :sat
+    # bar received :cat and {sat: :dat, dat: :sat}
+    # Output: "catbazdat" under "Your result"
+    # the bar method will take in two arguments/parameters (one is a hash)
   end
 
   def stringify
@@ -17,5 +20,8 @@ class PagesController < ApplicationController
 
   def person
     @person = Person.new params[:name], params[:age]
+  end
+
+  def showme
   end
 end
